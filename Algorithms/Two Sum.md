@@ -1,7 +1,7 @@
 ﻿# Related Problems
 leetcode 1. Two Sum \
 lintcode 610. Two Sum - Difference equals to target \
-leetocde 560. Subarray Sum Equals K \ 
+leetocde 560. Subarray Sum Equals K \
 leetcode 209. Minimum Size Subarray Sum \
 leetcode 15. 3Sum
 
