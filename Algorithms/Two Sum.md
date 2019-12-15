@@ -34,7 +34,7 @@ Double Pointers
 - 被动指针L 
 - for (R=0;R<n;R++) \
 ----while (A[R]-A[L]>target) \
-------L++ 
+--------L++ 
 ```python
 class Solution(object):
     def twoSum(self, nums, target):
@@ -59,10 +59,64 @@ class Solution(object):
 
 ## Subarray Sum Equals K
 ### Method
-Prefix sum and hashmap
+Prefix Sum and HashMap
+```python
+class Solution(object):
+    def subarraySum(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        if not nums or len(nums)==0:
+            return 0
+        sum_num =[0]*len(nums)
+        sum_num[0]=nums[0]
 
+        for i in range(1,len(nums)):
+            sum_num[i]=sum_num[i-1]+nums[i]
+        res=0
+        dic={}
+        dic[0]=1
+        for i in range(len(sum_num)):
+            if (sum_num[i]-k) in dic:
+                res+=dic[sum_num[i]-k]
+            dic[sum_num[i]]=dic.get(sum_num[i],0)+1
+        return res
+```
 
 
 ## Minimum Size Subarray Sum
+### Method
+Double Pointers
+```python
+class Solution(object):
+    def minSubArrayLen(self, s, nums):
+        """
+        :type s: int
+        :type nums: List[int]
+        :rtype: int
+        """
+        if nums is None or len(nums) == 0:
+            return 0
+
+        n = len(nums)
+        minLength = n + 1
+        sum = 0
+        j = 0
+        for i in range(n):
+            while j < n and sum < s:
+                sum += nums[j]
+                j += 1
+            if sum >= s:
+                minLength = min(minLength, j - i)
+
+            sum -= nums[i]
+            
+        if minLength == n + 1:
+            return 0
+            
+        return minLength
+```
 
 ## 3Sum
