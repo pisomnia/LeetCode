@@ -17,9 +17,9 @@
 - 图论：最短路径、最小生成树
 - 动态规划：背包问题、最长子序列
 
-5+5:
+### 5+5:
 
--  Data Structures:
+Data Structures:
 - Linked List
 - Stack & Queue
 - Binary Tree
@@ -27,7 +27,7 @@
 - Heap
 - Graph
 
--  Algorithms:
+Algorithms:
 - Binary Search
 - Divide and Merge
 - DFS & BFS
