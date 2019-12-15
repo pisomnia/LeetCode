@@ -1,2 +1,1 @@
-# LeetCode
- Algorithm & Database
+# A Record of My Problem Solution and Conclusion about Data Structures and Algorithms
