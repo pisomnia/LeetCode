@@ -153,22 +153,67 @@ class Solution(object):
         left=0
         right=len(nums)-1
         while left< right:
-            
-                
-                
-            
-                minLength = min(minLength, j - i)
-
-            sum -= nums[i]
-            
-        if minLength == n + 1:
-            return 0
-            
-        return minLength
+            if nums[left]+nums[right]<target:
+                res=min(res,target-nums[left]-nums[right])
+                left+=1
+            else:
+                res=min(res,nums[left]+nums[right]-target)
+                right-=1
+        return res
 ```
 
 ## 3Sum
 
 ### Method
-Double Pointers
+HashMap
+```python
+class Solution(object):
+    def threeSum(self, nums):
+        nums.sort()
+        self.res=set()
+        for i in range(len(nums)-2):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            self.twoSum(nums[i+1:],nums[i])
+        return self.res
+    def twoSum(self,nums,cur):
+        hashmap=set()
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            complement = 0-cur-nums[i]
+            if complement in hashmap:
+                self.res.add((cur,nums[i],complement))
+            else:
+                hashmap.add(complement)
 
+```
+
+### Method
+Double Pointers
+```python
+class Solution(object):
+    def threeSum(self, nums):
+        nums.sort()
+        self.res=[]
+        for i in range(len(nums)-2):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            self.twoSum(nums[i+1:],nums[i])
+        return self.res
+    def twoSum(self,nums,cur):
+        left=0
+        right=len(nums)-1
+        while left<right:
+            if (nums[left]+nums[right])<0-cur:
+                left+=1
+            elif (nums[left]+nums[right])>0-cur:
+                right-=1
+            else:
+                self.res.append([cur,nums[left],nums[right]])
+                left+=1
+                right-=1
+                while left<right and nums[left]==nums[left-1]:
+                    left+=1
+                while left<right and nums[right]==nums[right+1]:
+                    right-=1
