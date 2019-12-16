@@ -34,9 +34,7 @@ Double Pointers
 - 被动指针L 
 
 for(R=0;R<n;R++)
-
     while (A[R]-A[L]>target)
-
         L++
 ```python
 class Solution(object):
