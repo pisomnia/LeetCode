@@ -1,9 +1,9 @@
 ﻿# Related Problems
-leetcode 1. Two Sum \
-lintcode 610. Two Sum - Difference equals to target \
-leetocde 560. Subarray Sum Equals K \
-leetcode 209. Minimum Size Subarray Sum \
-leetcode 15. 3Sum
+<font color=red> leetcode 1. Two Sum</font>  
+<font color=red>lintcode 610. Two Sum - Difference equals to target</font>  
+<font color=red>leetocde 560. Subarray Sum Equals K</font>  
+<font color=red>leetcode 209. Minimum Size Subarray Sum</font>  
+<font color=red>leetcode 15. 3Sum</font>
 
 ## <font color=red> Two Sum - Difference equals to target </font>
 
@@ -33,8 +33,8 @@ Double Pointers
 - 主动指针R 
 - 被动指针L 
 
-for(R=0;R<n;R++)  
-　　while (A[R]-A[L]>target)  
+for(R=0;R<n;R++)：  
+　　while (A[R]-A[L]>target)：  
 　　　　L++  
 
 ```python
