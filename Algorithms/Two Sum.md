@@ -31,7 +31,7 @@ class Solution(object):
 ### Method 2
 Double Pointers 
 - 主动指针R 
-- 被动指针L 
+- 被动指针L \
 for (R=0;R<n;R++) \
     while (A[R]-A[L]>target) \
         L++
