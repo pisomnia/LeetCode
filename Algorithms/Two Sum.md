@@ -5,7 +5,7 @@ leetocde 560. Subarray Sum Equals K \
 leetcode 209. Minimum Size Subarray Sum \
 leetcode 15. 3Sum
 
-## Two Sum - Difference equals to target
+## <font color=red> Two Sum - Difference equals to target </font>
 
 ### Method 1
 HashMap
@@ -33,9 +33,10 @@ Double Pointers
 - 主动指针R 
 - 被动指针L 
 
-for(R=0;R<n;R++)
-    while (A[R]-A[L]>target)
-        L++
+for(R=0;R<n;R++)  
+&emsp while (A[R]-A[L]>target)  
+&emsp L++  
+
 ```python
 class Solution(object):
     def twoSum(self, nums, target):
@@ -58,7 +59,7 @@ class Solution(object):
 		return indexs
 ```
 
-## Subarray Sum Equals K
+## <font color=red> Subarray Sum Equals K </font>
 ### Method
 Prefix Sum and HashMap
 ```python
@@ -87,7 +88,7 @@ class Solution(object):
 ```
 
 
-## Minimum Size Subarray Sum
+## <font color=red> Minimum Size Subarray Sum </font>
 ### Method
 Double Pointers
 ```python
@@ -120,4 +121,4 @@ class Solution(object):
         return minLength
 ```
 
-## 3Sum
+## <font color=red> 3Sum </font>
