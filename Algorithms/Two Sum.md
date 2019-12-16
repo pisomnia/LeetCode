@@ -34,8 +34,8 @@ Double Pointers
 - 被动指针L 
 
 for(R=0;R<n;R++)  
-&emspwhile (A[R]-A[L]>target)  
-&emspL++  
+    while (A[R]-A[L]>target)  
+        L++  
 
 ```python
 class Solution(object):
