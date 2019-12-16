@@ -4,6 +4,8 @@
 - lintcode 610. Two Sum - Difference equals to target  
 - leetocde 560. Subarray Sum Equals K  
 - leetcode 209. Minimum Size Subarray Sum  
+- leetcode 325. Maximum Size Subarray Sum Equals k
+- lintcode 533. Two Sum - Closest to target
 - leetcode 15. 3Sum
 ```
 ## Two Sum - Difference equals to target
@@ -30,13 +32,17 @@ class Solution(object):
 		return []
 ```
 ### Method 2
-Double Pointers 
-- 主动指针R 
-- 被动指针L 
+Double Pointers (Both from left to right)
+- 主动指针 
+- 被动指针 
 
 for(R=0;R<n;R++)：  
 　　while (A[R]-A[L]>target)：  
 　　　　L++  
+
+for(L=0;L<n;L++)：  
+　　while (A[R]-A[L]<target)：  
+　　　　R++  
 
 ```python
 class Solution(object):
@@ -61,8 +67,10 @@ class Solution(object):
 ```
 
 ## Subarray Sum Equals K
+
 ### Method
 Prefix Sum and HashMap
+Here subarray_sums[i][j] = sum_num[i]-sum_num[j], only check sum_num[i]-k exists or not. Different from two sum difference
 ```python
 class Solution(object):
     def subarraySum(self, nums, k):
@@ -89,9 +97,10 @@ class Solution(object):
 ```
 
 
-## Minimum Size Subarray Sum 
+## Minimum Size Subarray Sum (array with positive integers)
+
 ### Method
-Double Pointers
+Double Pointers (Both from left to right)
 ```python
 class Solution(object):
     def minSubArrayLen(self, s, nums):
@@ -121,5 +130,45 @@ class Solution(object):
             
         return minLength
 ```
+## Maximum Size Subarray Sum Equals k
 
-## 3Sum 
+### Method
+HashMap key=prefix sum, value=index
+
+## Two Sum - Closest to target
+
+### Method
+Double Pointers (left pointer + right pointer)
+```python
+import sys
+class Solution(object):
+    def twoSumClosest(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        res = sys.maxsize
+        nums.sort()
+        left=0
+        right=len(nums)-1
+        while left< right:
+            
+                
+                
+            
+                minLength = min(minLength, j - i)
+
+            sum -= nums[i]
+            
+        if minLength == n + 1:
+            return 0
+            
+        return minLength
+```
+
+## 3Sum
+
+### Method
+Double Pointers
+
