@@ -5,8 +5,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        
-        
         res  = [1 for i in nums]
         left = 1
         right = 1
