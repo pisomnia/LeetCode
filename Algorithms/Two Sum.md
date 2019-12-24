@@ -170,7 +170,7 @@ HashMap
 class Solution(object):
     def threeSum(self, nums):
         nums.sort()
-        self.res=set()
+        self.res=[]
         for i in range(len(nums)-2):
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
@@ -178,14 +178,14 @@ class Solution(object):
         return self.res
     def twoSum(self,nums,cur):
         hashmap=set()
+        seen=set()
         for i in range(len(nums)):
-            if i > 0 and nums[i] == nums[i - 1]:
-                continue
             complement = 0-cur-nums[i]
-            if complement in hashmap:
-                self.res.add((cur,nums[i],complement))
+            if nums[i] not in seen and complement in hashmap:
+                seen.add(nums[i])
+                self.res.append([cur,complement,nums[i]])
             else:
-                hashmap.add(complement)
+                hashmap.add(nums[i])
 
 ```
 
