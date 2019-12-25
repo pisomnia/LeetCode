@@ -2,8 +2,8 @@
 ```diff
 - leetcode 33. Search in Rotated Sorted Array
 - lintcode 153. Find Minimum in Rotated Sorted Array
-- leetocde 
-- leetcode 
+- leetocde 34. Find First and Last Position of Element in Sorted Array
+- leetcode 162. Find Peak Element
 - leetcode 
 - lintcode 
 - leetcode 
@@ -78,8 +78,6 @@ class Solution(object):
 ```
 
 
-
-
 ## Find Minimum in Rotated Sorted Array
 
 ### Method 
@@ -103,4 +101,60 @@ class Solution(object):
             else:
                 right=mid
         return nums[left]
+```
+
+## Find First and Last Position of Element in Sorted Array
+
+### Method
+Template III
+```python
+
+
+```
+
+
+## Find Peak Element
+### Method 1
+Template II
+```python 
+class Solution(object):
+    def findPeakElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        left = 0
+        right = len(nums)-1
+        while left <  right:
+            mid = (left + right) // 2
+            if nums[mid] < nums[mid + 1]:
+                left = mid +1
+            else:
+                right = mid
+        return left
+```
+
+### Method 2
+Template III
+```python 
+class Solution(object):
+    def findPeakElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        left = 0
+        right = len(nums)-1
+        while left + 1 <  right:
+            mid = (left + right) // 2
+            if nums[mid] < nums[mid - 1]:
+                right = mid
+            elif nums[mid] < nums[mid + 1]:
+                left = mid
+            else:
+                right = mid
+        if nums[left] < nums[right]:
+            return right
+        else:
+            return left
 ```
