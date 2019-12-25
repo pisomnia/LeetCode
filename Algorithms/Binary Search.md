@@ -20,7 +20,14 @@ No post-processing required because at each step, you are checking to see if the
 - Searching Right: left = mid+1
 
 ## Template II
-It is used to search for an element or condition which requires accessing the current index and its immediate right neighbor's index in the array.
+It is used to search for an element or condition which requires accessing the current index and its immediate right neighbor's index in the array
+Post-processing required. Loop/Recursion ends when you have 1 element left. Need to assess if the remaining element meets the condition
+
+- Initial Condition: left = 0, right = length
+- Termination: left == right
+- Searching Left: right = mid
+- Searching Right: left = mid+1
+- Post-processing: need
 
 
 ## Template III
