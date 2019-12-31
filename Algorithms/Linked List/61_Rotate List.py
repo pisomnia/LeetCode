@@ -13,24 +13,23 @@ class Solution(object):
         """
         if head==None:
             return head
-        curNode = head
+        cur = head
         size = 1
-        while curNode!=None:
+        while cur.next!=None:
             size += 1
-            curNode = curNode.next
-        size -= 1
+            cur = cur.next
         k = k%size
         if k==0:
             return head
         len = 1
-        curNode = head
+        cur = head
         while len<size-k:
             len += 1
-            curNode = curNode.next
-        newHead = curNode.next
-        curNode.next = None
-        curNode = newHead
-        while curNode.next!=None:
-            curNode = curNode.next
-        curNode.next = head
+            cur = cur.next
+        newHead = cur.next
+        cur.next = None
+        cur = newHead
+        while cur.next!=None:
+            cur = cur.next
+        cur.next = head
         return newHead
