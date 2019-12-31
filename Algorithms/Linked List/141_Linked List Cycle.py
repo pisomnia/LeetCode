@@ -19,10 +19,10 @@ class Solution(object):
                 head=head.next
         return False
         """
-        if head is None:    		
-            return False		
-        p1 = head		
-        p2 = head		
+        if head is None:    
+            return False
+        p1 = head
+        p2 = head
         while True:
             if p1.next is not None:
                 p1=p1.next.next
