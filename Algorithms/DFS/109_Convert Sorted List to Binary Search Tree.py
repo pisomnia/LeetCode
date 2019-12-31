@@ -17,32 +17,22 @@ class Solution(object):
         :type head: ListNode
         :rtype: TreeNode
         """
-        res = self.dfs(head)
-        
-        return res
-        
-    def dfs(self, head):
-        
-        if head == None:
+        def findMid(head):
+            slow=fast=head
+            prev=None
+            while fast and fast.next:
+                prev=slow
+                slow=slow.next
+                fast=fast.next.next
+            prev.next=None
+            return slow
+        if not head:
             return None
-        
-        if head.next == None:
+        if not head.next:
             return TreeNode(head.val)
+        mid=findMid(head)
+        root=TreeNode(mid.val)
+        root.left=self.sortedListToBST(head)
+        root.right=self.sortedListToBST(mid.next)
         
-        dummy = ListNode(0)
-        dummy.next = head
-        fast = head
-        slow = dummy
-        
-        while fast != None and fast.next != None:
-            fast = fast.next.next
-            slow = slow.next
-        
-        temp = slow.next
-        slow.next = None
-        parent = TreeNode(temp.val)
-        
-        parent.left = self.dfs(head)
-        parent.right = self.dfs(temp.next)
-        
-        return parent
+        return root
