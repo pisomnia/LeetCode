@@ -20,3 +20,20 @@ class Solution(object):
             prev=cur
             cur=tmp            
         return prev
+
+
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        递归
+        """
+        return self.reverse(head, None)
+        
+    def reverse(self, head, newHead):
+        if not head:
+            return newHead
+        headnext = head.next
+        head.next = newHead
+        return self.reverse(headnext, head)
