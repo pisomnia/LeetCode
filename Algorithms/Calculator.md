@@ -5,10 +5,9 @@
 - leetocde 772. Basic Calculator III 
 ```
 ## prefix notation
-	f(x,y,z)
 	add(sub(8,div(5,2)),1)
 	+ - 8/6 2 1
-## Infix notation
+## infix notation
 	8-6/2+1	
 	     ^
 ## postfix notation
@@ -66,8 +65,6 @@ class Solution(object):
 
 ### Method 
 Recursion  
-
-
 ```python
 class Solution(object):
     def calculate(self, s):
@@ -114,8 +111,7 @@ class Solution(object):
 ## Basic Calculator
 
 ### Method 
-Stack+Postfix
-  
+Stack+Postfix  
 ```python
 class Solution(object):
     def calculate(self, s):
