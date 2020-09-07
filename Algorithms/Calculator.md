@@ -8,16 +8,14 @@
 	f(x,y,z)
 	add(sub(8,div(5,2)),1)
 	+ - 8/6 2 1
-	
 ## Infix notation
-	8-6/2+1
-	
+	8-6/2+1	
+	     ^
 ## postfix notation
 	8 6 2 / - 1 +
-	
-    opperator stack: ======>
-	 (-) (/) +
-	 
+
+opperator stack: ======>
+	 (-) (/) +	 
 postfix list: 8 6 2 / -
 
 ## infix to postfix conversion:
