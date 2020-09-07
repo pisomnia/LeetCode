@@ -12,7 +12,7 @@
 ## Infix notation
 	8-6/2+1
 	
-##postfix notation
+## postfix notation
 	8 6 2 / - 1 +
 	
     opperator stack: ======>
@@ -30,12 +30,6 @@ postfix list: 8 6 2 / -
     If the current item is an operator,:
     	(a) Pop operator from stack and add to postfix list which has the same or higher precedence than it
 	(b) Append it to the operator stack
-		
-				
-    2 * (8 - (4 -2) * 3) / 2
-	
-    operator stack========>
-    * ( - ( -
 	
 ## Basic CalculatorII
 
