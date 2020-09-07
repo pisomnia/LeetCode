@@ -14,8 +14,8 @@
 ## postfix notation
 	8 6 2 / - 1 +
 
-opperator stack: ======>
-	 (-) (/) +	 
+opperator stack: (-) (/) +
+	 
 postfix list: 8 6 2 / -
 
 ## infix to postfix conversion:
